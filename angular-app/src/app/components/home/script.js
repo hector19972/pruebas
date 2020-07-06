@@ -4,7 +4,7 @@
  * MIT license
  */
 
-(function(){
+var galeria = (function (){
 
 var π = Math.PI;
 var τ = 2 * π;
@@ -290,7 +290,7 @@ _.ColorStop.colorToRGBA = function(color) {
 	return color;
 };
 
-})();
+})(webGlObject||{});
 
 if (self.StyleFix) {
 	(function(){

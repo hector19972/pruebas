@@ -8,7 +8,7 @@ import { PolicyService } from 'src/app/services/policy.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  //styleUrls: ['./home.component.css',]
+  styleUrls: ['./home.component.css',]
 })
 export class HomeComponent implements OnInit {
   bandera: boolean;
@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   };
   constructor(private policyService: PolicyService) {
     this.bandera = true;
+
   }
 
   ngOnInit(): void {
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
       });
     });
   }
+
 
 
 
