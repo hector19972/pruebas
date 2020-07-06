@@ -1,0 +1,17 @@
+<form [formGroup]="forma" (ngSubmit)="IngresarConUsuario()" class="example-form">
+  <mat-form-field class="example-full-width basic-container">
+    <mat-label>Correo Electronico</mat-label>
+    <input matInput  class="form-control" type="text"  formControlName="correo">
+  </mat-form-field>
+  <mat-form-field class="example-full-width basic-container">
+    <mat-label>Contraseña</mat-label>
+    <input matInput class="form-control" type="text"  formControlName="contraseña" >
+  </mat-form-field>
+
+  <div class="input-group col-md-8">
+    <button type="submit" class="btn btn-outline-primary">
+      Ingresar
+    </button>
+    </div>
+
+</form>
