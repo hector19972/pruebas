@@ -615,11 +615,11 @@ class HomeComponent {
             this.policies = data.map((e) => {
                 return {
                     codigoLibro: e.payload.doc.id,
-                    nombre: e.payload.doc.data['nombre'],
-                    autor: e.payload.doc.data['autor'],
-                    editor: e.payload.doc.data['editor'],
-                    url: e.payload.doc.data['url'],
-                    copias: e.payload.doc.data['copias'],
+                    nombre: e.payload.doc.data()['nombre'],
+                    autor: e.payload.doc.data()['autor'],
+                    editor: e.payload.doc.data()['editor'],
+                    url: e.payload.doc.data()['url'],
+                    copias: e.payload.doc.data()['copias'],
                 };
             });
         });
@@ -1238,11 +1238,11 @@ class PolicyListComponent {
             this.policies = data.map((e) => {
                 return {
                     codigoLibro: e.payload.doc.id,
-                    nombre: e.payload.doc.data['nombre'],
-                    autor: e.payload.doc.data['autor'],
-                    editor: e.payload.doc.data['editor'],
-                    url: e.payload.doc.data['url'],
-                    copias: e.payload.doc.data['copias'],
+                    nombre: e.payload.doc.data()['nombre'],
+                    autor: e.payload.doc.data()['autor'],
+                    editor: e.payload.doc.data()['editor'],
+                    url: e.payload.doc.data()['url'],
+                    copias: e.payload.doc.data()['copias'],
                 };
             });
         });
