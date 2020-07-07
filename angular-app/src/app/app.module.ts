@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { PolicyListComponent } from './components/policy-list/policy-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LibroComponent } from './components/libro/libro.component';
 // Mailer
 
 
@@ -56,7 +57,8 @@ import { HttpClientModule } from '@angular/common/http';
     PoliticasComponent,
     QrcodigoComponent,
     PolicyListComponent,
-    RegistroComponent
+    RegistroComponent,
+    LibroComponent
   ],
   imports: [
     BrowserModule,

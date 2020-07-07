@@ -15,7 +15,9 @@
   <div class="container">
     <ul class="row">
 
-        <li *ngFor="let almacen of policies"><img [src]="almacen.url" class="img-fluid p-1" alt="Responsive image"></li>
+        <li  *ngFor="let almacen of policies">
+            <img (click)="verLibro(almacen.codigoLibro)" [src]="almacen.url" class="img-fluid p-1" alt="Responsive image">
+        </li>
 
     </ul>
   </div>

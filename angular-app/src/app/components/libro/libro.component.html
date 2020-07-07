@@ -1,0 +1,23 @@
+<p>libro works!</p>
+<table class="table table-striped table-dark">
+  <thead>
+    <th scope="col">Codigo Libro</th>
+    <th scope="col">Nombre libro</th>
+    <th scope="col">Autor</th>
+    <th scope="col">Editor</th>
+    <th scope="col">Copias</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policy of policies">
+      <td>{{ policy.codigoLibro }}</td>
+      <td>{{ policy.nombre }}</td>
+      <td>{{ policy.autor }}</td>
+      <td>{{ policy.editor }}</td>
+      <td>{{ policy.copias }}</td>
+      <ng-template *ngIf="policy.codigoLibro === id">
+        <img [src]="policy.url" class="img-fluid p-1" alt="Responsive image">
+      </ng-template>
+
+    </tr>
+  </tbody>
+</table>

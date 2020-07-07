@@ -13,6 +13,11 @@ export class PolicyService {
   createPolicy(policy: Policy) {
     return this.firestore.collection('biblioteca').add(policy);
   }
+
+  getLibro(libroID: string){
+    return this.firestore.collection('biblioteca').doc(libroID).snapshotChanges();
+  }
+
   updatePolicy(policy: Policy) {
     delete policy.codigoLibro;
     this.firestore.doc('biblioteca/' + policy.codigoLibro).update(policy);

@@ -27,7 +27,7 @@ export class ContactoComponent implements OnInit {
     console.log('EnviadoCorreo');
     this.mensaje = this.forma.get('mensaje').value;
     this.asunto = this.forma.get('asunto').value;
-    let urlapi = `http://localhost:3000/enviar/${this.mensaje}/${this.asunto}`;
+    let urlapi = `https://api-palanaeum.herokuapp.com/enviar/${this.mensaje}/${this.asunto}`;
     this.correo.enviarCorreo(urlapi).subscribe((data) => {
       console.log(data);
       this.datos = data;

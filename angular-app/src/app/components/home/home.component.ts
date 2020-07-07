@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { temporaryDeclaration } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Policy } from 'src/app/models/policy.model';
 import { PolicyService } from 'src/app/services/policy.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css',]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   bandera: boolean;
@@ -21,11 +21,10 @@ export class HomeComponent implements OnInit {
     url: '',
     copias: ''
   };
-  constructor(private policyService: PolicyService) {
+  constructor(private policyService: PolicyService, private router: Router) {
     this.bandera = true;
 
   }
-
   ngOnInit(): void {
     this.policyService.getPolicies().subscribe((data) => {
       this.policies = data.map((e) => {
@@ -39,6 +38,13 @@ export class HomeComponent implements OnInit {
         } as Policy;
       });
     });
+  }
+  verLibro(item: string) {
+    let libroId;
+    libroId = item;
+    console.log(item);
+   //console.log(this.router);
+    this.router.navigate(['/libro', libroId]);
   }
 
 
