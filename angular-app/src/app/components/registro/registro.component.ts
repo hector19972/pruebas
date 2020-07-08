@@ -61,12 +61,9 @@ export class RegistroComponent implements OnInit {
   }
 
   checarSiSonIguales(): boolean {
-    if (this.forma.get('contraseña') === this.forma.get('contraseñaR')) {
+    if (this.forma.get('contraseña').value === this.forma.get('contraseñaR').value) {
       return false;
-
-    } else {
-      return true;
-    }
+    } else { return true; }
   }
 
 }

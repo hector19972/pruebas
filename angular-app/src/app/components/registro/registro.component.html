@@ -6,40 +6,40 @@
     <form [formGroup]="forma"  (ngSubmit)="registrarUsuario()" class="example-form" #f="ngForm">
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Nombre/s</mat-label>
-        <input matInput class="form-control" type="text" formControlName="nombre" ngModel required>
+        <input matInput class="form-control" type="text" formControlName="nombre"  required>
       </mat-form-field>
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Apellido Paterno</mat-label>
-        <input matInput class="form-control" type="text" formControlName="apPaterno" ngModel required>
+        <input matInput class="form-control" type="text" formControlName="apPaterno"  required>
       </mat-form-field>
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Apellido Materno</mat-label>
-        <input matInput class="form-control" type="text" formControlName="apMaterno" ngModel required>
+        <input matInput class="form-control" type="text" formControlName="apMaterno"  required>
       </mat-form-field>
       <br>
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Correo Electronico</mat-label>
-        <input matInput class="form-control" type="text" formControlName="correo" ngModel required>
+        <input matInput class="form-control" type="text" formControlName="correo"  required>
       </mat-form-field>
       <br>
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Contraseña</mat-label>
-        <input matInput class="form-control" (change)="cambioss()" type="password" formControlName="contraseña" ngModel required>
+        <input matInput class="form-control" (change)="cambioss()" type="password" formControlName="contraseña" required>
       </mat-form-field>
       <mat-form-field class="example-full-width basic-container">
         <mat-label>Repite la Contraseña</mat-label>
-        <input matInput class="form-control" (change)="cambioss()" type="password" formControlName="contraseñaR" ngModel required>
+        <input matInput class="form-control" (change)="cambioss()" type="password" formControlName="contraseñaR"  required>
       </mat-form-field>
       <br>
       <div class="example-full-width basic-container">
-        <mat-checkbox matInput class="form-control" formControlName="terminos" ngModel required>Aceptar Terminos y
+        <mat-checkbox matInput class="form-control" formControlName="terminos"  required>Aceptar Terminos y
           condiciones</mat-checkbox>
       </div>
 
       <mat-error class="mat-error" *ngIf="bandera">Las contraseñas no coinciden</mat-error>
 
       <div class="input-group col-md-8">
-        <button mat-raised-button type="submit" class="btn btn-outline-primary" [disabled]="f.invalid && bandera === false" >
+        <button mat-raised-button type="submit" class="btn btn-outline-primary" [disabled]="f.invalid || bandera" >
           Guardar
         </button>
       </div>
