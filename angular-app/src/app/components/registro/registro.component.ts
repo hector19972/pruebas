@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class RegistroComponent implements OnInit {
   forma: FormGroup;
   bandera: boolean;
+  terminos: any;
   auxUsuario: Usuario = {
     uid: '',
     nombre: '',
@@ -56,7 +57,7 @@ export class RegistroComponent implements OnInit {
     this.auxUsuario.ApMaterno = this.forma.get('apMaterno').value as string;
     this.auxUsuario.correo = this.forma.get('correo').value as string;
     this.auxUsuario.contraseña = this.forma.get('contraseña').value as string;
-    this.forma.setValue({ nombre: '', apPaterno: '', apMaterno: '', correo: '', contraseña: '', contraseñaR: '' });
+    this.forma.setValue({ nombre: '', apPaterno: '', apMaterno: '', correo: '', contraseña: '', contraseñaR: '', terminos: false });
     this.create(this.auxUsuario);
   }
 

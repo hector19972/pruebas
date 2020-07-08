@@ -24,7 +24,7 @@ export class UsuariosService {
       console.log(usuarioR.correo, usuarioR.contraseña);
     });
     */
-    console.log('Hola');
+    // console.log('Hola');
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user);
@@ -46,7 +46,7 @@ export class UsuariosService {
         let isAnonymous = user.isAnonymous;
         let providerData = user.providerData;
         // ...
-        console.log(user.uid);
+        // console.log(user.uid);
         usuario.uid = user.uid;
         usuario.nombre = usuarioR.nombre;
         usuario.ApPaterno = usuarioR.ApPaterno;
@@ -83,8 +83,8 @@ export class UsuariosService {
         var providerData = user.providerData;
         // ...
         usuario = this.optenerDatos(uid);
-        console.log('1  ', usuario);
-        console.log('2  ', this.optenerDatos(uid));
+        //console.log('1  ', usuario);
+        //console.log('2  ', this.optenerDatos(uid));
         //return usuario;
       } else {
         // User is signed out.
