@@ -11,7 +11,7 @@ import { Policy } from 'src/app/models/policy.model';
 })
 export class LibroComponent implements OnInit {
   policies: Policy[];
-  id: any;
+  idLibro: any;
 
   constructor(private policyService: PolicyService, private router: ActivatedRoute) {
     this.router.params.subscribe((params) => {
@@ -21,8 +21,8 @@ export class LibroComponent implements OnInit {
   }
   buscarLibro(id: string) {
     console.log("hola "+this.policyService.getLibro(id));
-    this.id = id;
-    console.log('El primer id del que creo es el librocomponent'+this.id+" el otro id "+id)
+    this.idLibro = id;
+    console.log('El primer id del que creo es el librocomponent '+this.idLibro+" el otro id "+id)
     this.policyService.getPolicies().subscribe((data) => {
       this.policies = data.map((e) => {
         return {

@@ -1,4 +1,4 @@
-<p>libro works!</p>
+<!--<p>libro works!</p>
 <table class="table table-striped table-dark">
   <thead>
     <th scope="col">Codigo Libro</th>
@@ -9,15 +9,35 @@
   </thead>
   <tbody>
     <tr *ngFor="let policy of policies">
-      <td>{{ policy.codigoLibro }}</td>
-      <td>{{ policy.nombre }}</td>
-      <td>{{ policy.autor }}</td>
-      <td>{{ policy.editor }}</td>
-      <td>{{ policy.copias }}</td>
-      <ng-template *ngIf="policy.codigoLibro === id">
-        <img [src]="policy.url" class="img-fluid p-1" alt="Responsive image">
-      </ng-template>
-
+      <div *ngIf="policy.codigoLibro == idLibro as string">
+        <td>{{ policy.codigoLibro }}</td>
+        <td>{{ policy.nombre }}</td>
+        <td>{{ policy.autor }}</td>
+        <td>{{ policy.editor }}</td>
+        <td>{{ policy.copias }}</td>
+        <td *ngIf="policy.codigoLibro == idLibro as string">
+          <h1>Holaaaaaaaaaaaaaaa</h1>
+        </td>
+      </div>
     </tr>
   </tbody>
-</table>
+</table>-->
+
+
+<mat-card *ngFor="let policy of policies" class="example-card">
+  <mat-card-header *ngIf="policy.codigoLibro == idLibro as string">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{policy.nombre}}</mat-card-title>
+    <mat-card-subtitle>{{policy.autor}}</mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="policy.codigoLibro == idLibro as string" mat-card-image [src]="policy.url" class="img-fluid p-1" alt="Libro">
+  <mat-card-content *ngIf="policy.codigoLibro == idLibro as string">
+    <p>
+      {{policy.editor}}
+      {{policy.copias}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="policy.codigoLibro == idLibro as string">
+    <button mat-button>Regresar</button>
+  </mat-card-actions>
+</mat-card>
