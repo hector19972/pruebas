@@ -37,6 +37,7 @@ import { PolicyListComponent } from './components/policy-list/policy-list.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LibroComponent } from './components/libro/libro.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 // Mailer
 
 
@@ -58,7 +59,8 @@ import { LibroComponent } from './components/libro/libro.component';
     QrcodigoComponent,
     PolicyListComponent,
     RegistroComponent,
-    LibroComponent
+    LibroComponent,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,

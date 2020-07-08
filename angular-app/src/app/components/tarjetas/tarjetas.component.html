@@ -1,0 +1,48 @@
+<!--<div class="card-columns m-5 animated fadeIn">
+  <div (click)="verArtista( item )" *ngFor="let item of this.items" class="card puntero">
+    <img [src]="item.url" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <p class="card-text">
+        <span *ngFor="let artista of item.artists" class="badge badge-pill badge-primary">{{artista.name}}</span>
+      </p>
+    </div>
+  </div>
+</div>
+-->
+
+<h1>{{this.busqueda}}</h1>
+<h2>{{this.texto}}</h2>
+
+<div *ngIf="this.busqueda.valueOf()==bus0">
+  <h1>Busqueda Nombre</h1>
+  <div *ngFor="let almacen of this.items" class="container">
+    <ul *ngIf="almacen.nombre == this.texto" class="row">
+      <li>
+        <img (click)="verLibro(almacen.codigoLibro)" [src]="almacen.url" class="img-fluid p-1" alt="Responsive image">
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="this.busqueda.valueOf()==bus1">
+  <h1>Busqueda Editorial</h1>
+  <div *ngFor="let almacen of this.items" class="container">
+    <ul *ngIf="almacen.editor == this.texto" class="row">
+      <li>
+        <img (click)="verLibro(almacen.codigoLibro)" [src]="almacen.url" class="img-fluid p-1" alt="Responsive image">
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="this.busqueda.valueOf()==bus2">
+  <h1>Busqueda Autor</h1>
+  <div *ngFor="let almacen of this.items" class="container">
+    <ul *ngIf="almacen.autor == this.texto" class="row">
+      <li>
+        <img (click)="verLibro(almacen.codigoLibro)" [src]="almacen.url" class="img-fluid p-1" alt="Responsive image">
+      </li>
+    </ul>
+  </div>
+</div>
