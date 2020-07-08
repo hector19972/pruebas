@@ -23,27 +23,29 @@
   </tbody>
 </table>-->
 
+<div *ngFor="let policy of policies">
+  <mat-card *ngIf="policy.codigoLibro == idLibro as string" class="example-card card text-white bg-dark mb-3">
+    <mat-card-header *ngIf="policy.codigoLibro == idLibro as string">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Nombre de la Obra:{{policy.nombre}}</mat-card-title>
+      <mat-card-subtitle>Autor: {{policy.autor}}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="policy.codigoLibro == idLibro as string" mat-card-image [src]="policy.url" class="img-fluid p-1"
+      alt="Libro">
+    <mat-card-content *ngIf="policy.codigoLibro == idLibro as string">
+      <p>
+        Editora responsable: {{policy.editor}}
 
-<mat-card *ngFor="let policy of policies" class="example-card card text-white bg-dark mb-3">
-  <mat-card-header *ngIf="policy.codigoLibro == idLibro as string">
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Nombre de la Obra:{{policy.nombre}}</mat-card-title>
-    <mat-card-subtitle>Autor: {{policy.autor}}</mat-card-subtitle>
-  </mat-card-header>
-  <img *ngIf="policy.codigoLibro == idLibro as string" mat-card-image [src]="policy.url" class="img-fluid p-1" alt="Libro">
-  <mat-card-content *ngIf="policy.codigoLibro == idLibro as string">
-    <p>
-      Editora responsable: {{policy.editor}}
-
-      Copias Disponibles en biblioteca: {{policy.copias}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions *ngIf="policy.codigoLibro == idLibro as string">
-    <button routerLink="/home" class="btn btn-outline-danger m-1">
-      Pagina principal
-    </button>
-    <button routerLink="/search" class="btn btn-danger m-1">
-      Buscar otro libro
-    </button>
-  </mat-card-actions>
-</mat-card>
+        Copias Disponibles en biblioteca: {{policy.copias}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="policy.codigoLibro == idLibro as string">
+      <button routerLink="/home" class="btn btn-outline-danger m-1">
+        Pagina principal
+      </button>
+      <button routerLink="/search" class="btn btn-danger m-1">
+        Buscar otro libro
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
